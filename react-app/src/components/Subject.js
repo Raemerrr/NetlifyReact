@@ -1,0 +1,28 @@
+import React, { Component } from "react";
+
+class Subject extends Component {
+  static defaultProps = {
+    title: "기본",
+    sub: "기본 내용",
+  };
+  render() {
+    return (
+      <header>
+        <h1>
+          <a
+            href="/"
+            onClick={(e) => {
+              e.preventDefault();
+              this.props.onChangePage();
+            }}
+          >
+            {this.props.title}
+          </a>
+        </h1>
+        {this.props.sub}
+      </header>
+    );
+  }
+}
+
+export default Subject;
